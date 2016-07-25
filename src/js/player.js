@@ -2105,6 +2105,20 @@ class Player extends Component {
   }
 
   /**
+   * Set the avoidNative option both on html5 options and through the tech
+   * @param  {Boolean} value Value to set avoidNative to
+   * @return {Player} Returns the player when setting
+   */
+  avoidNative(value) {
+    if (value !== undefined) {
+      this.options_['html5']['avoidNative'] = value;
+      this.techCall_('setOption', {key: 'avoidNative', value: value});
+
+      return this;
+    }
+  }
+
+  /**
    * Get or set the poster image source url
    *
    * ##### EXAMPLE:

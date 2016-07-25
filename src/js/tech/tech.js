@@ -762,6 +762,14 @@ Tech.withSourceHandlers = function(_Tech){
     return '';
   };
 
+  /**
+   * Set an option on the tech
+   * @param {Object} opt The option object with key and value
+   */
+  _Tech.prototype.setOption = function(opt) {
+    this.options_[opt['key']] = opt['value'];
+  };
+
   /*
    * When using a source handler, prefer its implementation of
    * any function normally provided by the tech.

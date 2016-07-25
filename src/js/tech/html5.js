@@ -1014,6 +1014,11 @@ Html5.nativeSourceHandler.canPlayType = function(type){
 Html5.nativeSourceHandler.canHandleSource = function(source, options){
   var match, ext;
 
+  console.log('checking html5 native support, options.avoidNative: ' + options.avoidNative);
+  if (options.avoidNative) {
+    return '';
+  }
+
   // If a type was provided we should rely on that
   if (source.type) {
     return Html5.nativeSourceHandler.canPlayType(source.type);
